@@ -1,60 +1,48 @@
+import java.util.Scanner;
 
-ejeur0werogdfe][]
+class Point {
+    double x;
+    double y;
+
+    Point(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+}
 
 public class Main {
+
+    public static double KusLinInterpolution(Point p1, Point p2, double x) {
+        if (p1.x > x || p2.x < x) {
+            System.out.println("Error");
+            return 0.0;
+        }
+        return p1.y + (p2.y - p1.y) * (x - p1.x) / (p2.x - p1.x);
+    }
+
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Number of nodes: ");
+        int n = scanner.nextInt();
+        Point[] points = new Point[n];
 
-        double[] x = {0, 1, 2, 3, 6};
-        double[] y = {1, 3, 2, 5, 4};
-
-        System.out.print("Введите значение x для интерполяции: ");
-        double xInput = readDouble();
-
-        double interpolatedValue = interpolate(x, y, xInput);
-        if (isNaN(interpolatedValue)) {
-            System.out.println("Значение x выходит за пределы данных.");
-        } else {
-            System.out.println("Интерполированное значение для x = " + xInput + " : y = " + interpolatedValue);
-        }
-    }
-
-    public static double interpolate(double[] x, double[] y, double xInput) {
-        if (xInput < x[0] || xInput > x[x.length - 1]) {
-            return Double.NaN;
+        System.out.print("Nodes:");
+        for (int i = 0; i < n; i++) {
+            double x = scanner.nextDouble();
+            double y = scanner.nextDouble();
+            points[i] = new Point(x, y);
         }
 
-        for (int i = 0; i < x.length - 1; i++) {
-            if (xInput >= x[i] && xInput <= x[i + 1]) {
-                // Вычисляем y с помощью кусочной линейной интерполяции
-                double slope = (y[i + 1] - y[i]) / (x[i + 1] - x[i]); // Нахождение углового коэффициента
-                return y[i] + slope * (xInput - x[i]); // Линейная интерполяция
+        System.out.print("The x value for piecewise linear interpolation is: ");
+        double x = scanner.nextDouble();
+
+        for (int i = 0; i < n - 1; i++) {
+            if (x >= points[i].x && x <= points[i + 1].x) {
+                double result = KusLinInterpolution(points[i], points[i + 1], x);
+                System.out.println("Result of piecewise linear interpolation: " + result);
+                return;
             }
         }
-        return Double.NaN;
-    }
-
-    // Метод для проверки на NaN
-    public static boolean isNaN(double value) {
-        return value != value;
-    }
-
-    // Метод для чтения значения типа double с консоли
-    public static double readDouble() {
-        StringBuilder input = new StringBuilder();
-        try {
-            int character;
-            while ((character = System.in.read()) != '\n') {
-                input.append((char) character);
-            }
-        } catch (java.io.IOException e) {
-            System.out.println("Ошибка чтения ввода.");
-        }
-
-        try {
-            return Double.parseDouble(input.toString().trim());
-        } catch (NumberFormatException e) {
-            System.out.println("Некорректный ввод. Установлено значение по умолчанию 0.0.");
-            return 0.0; // Возвращаем значение по умолчанию в случае некорректного ввода
-        }
+        System.out.println("Error");
     }
 }
