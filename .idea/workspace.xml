@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b781f2de-1e4f-4c22-bb28-9fc9927dbe9a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="b781f2de-1e4f-4c22-bb28-9fc9927dbe9a" name="Changes" comment="derivative" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +40,44 @@
       <option name="presentableId" value="Default" />
       <updated>1729626778607</updated>
     </task>
+    <task id="LOCAL-00001" summary="123">
+      <option name="closed" value="true" />
+      <created>1732569008895</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732569008895</updated>
+    </task>
+    <task id="LOCAL-00002" summary="derivative">
+      <option name="closed" value="true" />
+      <created>1732569031258</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732569031258</updated>
+    </task>
+    <task id="LOCAL-00003" summary="derivative">
+      <option name="closed" value="true" />
+      <created>1732569101417</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732569101417</updated>
+    </task>
+    <task id="LOCAL-00004" summary="derivative">
+      <option name="closed" value="true" />
+      <created>1732569152984</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732569152984</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="123" />
+    <MESSAGE value="derivative" />
+    <option name="LAST_COMMIT_MESSAGE" value="derivative" />
   </component>
 </project>
