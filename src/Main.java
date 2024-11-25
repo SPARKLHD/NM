@@ -6,7 +6,6 @@ public class Main {
         double h = 1e-10; // малое значение для приближения
         return (Math.sin(x + h) - Math.sin(x - h)) / (2 * h);
     }
-
     public static void main(String[] args) {
         double x = PI / 2;
         double derivativeValue = derivative(x);
