@@ -1,15 +1,15 @@
-import static java.lang.Math.PI;
-
 public class Main {
-    public static double derivative(double x) {
-        double h = 1e-10; // малое значение для приближения
-        return (Math.sin(x + h) - Math.sin(x - h)) / (2 * h);
-    }
     public static void main(String[] args) {
-        double x = PI/6;
-        double derivativeValue = derivative(x);
-        System.out.println("Производная функции y = sin(x) в x = " + x + " равна: " + derivativeValue);
+        float epsilon = 1.0f;
+        while (1.0f + (epsilon/2.0f) > 1.0f){
+            epsilon/=2.0f;
+        }
+        System.out.println("Machine epsilon for float: " + epsilon);
 
-        System.out.println("Производная функции y = sin(x) в x = " + x + " равна: " + Math.cos(x));
+    double epsilonDouble = 1.0;
+    while (1.0 + (epsilonDouble/2.0) > 1.0){
+        epsilonDouble/=2.0;
     }
+    System.out.println("Machine epsilon for double: " + epsilonDouble);
+}
 }
