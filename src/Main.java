@@ -9,6 +9,7 @@ public class Main {
         double x = PI/6;
         double derivativeValue = derivative(x);
         System.out.println("Производная функции y = sin(x) в x = " + x + " равна: " + derivativeValue);
+
         System.out.println("Производная функции y = sin(x) в x = " + x + " равна: " + Math.cos(x));
     }
 }
