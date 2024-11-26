@@ -20,11 +20,11 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Количество узлов (i): ");
+        System.out.print("Количество узлов: ");
         int n = scanner.nextInt();
         Point[] points = new Point[n];
 
-        System.out.print("Узлы (x,y): ");
+        System.out.print("Узлы: ");
         for (int i = 0; i < n; i++) {
             double x = scanner.nextDouble();
             double y = scanner.nextDouble();
