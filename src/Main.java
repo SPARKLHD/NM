@@ -37,7 +37,6 @@ public class Main {
                 diffTable[i][j] = diffTable[i + 1][j - 1] - diffTable[i][j - 1];
             }
     }
-        // Вывод этой таблицы
         System.out.println("Таблица конечных разностей:");
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -47,14 +46,14 @@ public class Main {
         }
 
         double h = x[1] - x[0];
-        double q = (xi - x[n - 1]) / h; // q считается относительно последнего узла
-        double result = y[n - 1]; // Начинаем с последнего значения y
+        double q = (xi - x[n - 1]) / h; 
+        double result = y[n - 1]; 
         double term = 1;
 
     // Вычисляем интерполяционную сумму
         for (int i = 1; i < n; i++) {
-            term *= (q + (i - 1)) / i; // Учитываем, что q увеличивается
-            result += term * diffTable[n - i - 1][i]; // Используем разности с конца таблицы
+            term *= (q + (i - 1)) / i; 
+            result += term * diffTable[n - i - 1][i]; 
         }
         return result;
     }
