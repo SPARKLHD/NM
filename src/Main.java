@@ -1,46 +1,33 @@
 import java.util.Scanner;
 
-class Point {
-    double x;
-    double y;
-    Point(double x, double y) {
-        this.x = x;
-        this.y = y;
-    }
-}
-
 public class Main {
-    public static double KusLinInterpolution(Point p1, Point p2, double x) {
-        if (p1.x > x || p2.x < x) {
-            System.out.println("Ошибка");
-            return 0.0;
-        }
-        return p1.y + (p2.y - p1.y) * (x - p1.x) / (p2.x - p1.x);
-    }
 
     public static void main(String[] args) {
+        // Пример данных
+        double[] x = {1, 3, 4, 7};  // Значения x
+        double[] y = {2, 3, 6, 8};  // Значения y
+
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Количество узлов: ");
-        int n = scanner.nextInt();
-        Point[] points = new Point[n];
+        System.out.print("Значение x для интерполяции: ");
+        double xInput = scanner.nextDouble();
 
-        System.out.print("Узлы: ");
-        for (int i = 0; i < n; i++) {
-            double x = scanner.nextDouble();
-            double y = scanner.nextDouble();
-            points[i] = new Point(x, y);
+        double interpolatedValue = interpolate(x, y, xInput);
+        if (interpolatedValue != Double.NaN) {
+            System.out.println("Значение y = " + interpolatedValue);
+        } else {
+            System.out.println("Значение x выходит за пределы данных.");
         }
+    }
 
-        System.out.print("Значение x для кусочно-линейной интерполяции: ");
-        double x = scanner.nextDouble();
-
-        for (int i = 0; i < n - 1; i++) {
-            if (x >= points[i].x && x <= points[i + 1].x) {
-                double result = KusLinInterpolution(points[i], points[i + 1], x);
-                System.out.println("Результат кусочно-линейной интерполяции: " + result);
-                return;
+    public static double interpolate(double[] x, double[] y, double xInput) {
+        if (xInput < x[0] || xInput > x[x.length - 1]) {
+            return Double.NaN; // Если xInput вне диапазона
+        }
+        for (int i = 0; i < x.length - 1; i++) {
+            if (xInput >= x[i] && xInput <= x[i + 1]) {
+                return y[i] + (y[i + 1] - y[i]) * (xInput - x[i]) / (x[i + 1] - x[i]);
             }
         }
-        System.out.println("Ошибка");
+        return Double.NaN; // Не должно достигать здесь
     }
 }
