@@ -5,12 +5,12 @@ public class Main {
 //        double[] y = {3, 7, 11, 17, 18};
         double[] y = {};
 
-        // Если массив y пустой, вычисляем его как y = x^3
         if (y.length == 0) {
             y = computeFunctionValues(x);
         }
         System.out.println("x: " + Arrays.toString(x));
         System.out.println("y: " + Arrays.toString(y));
+       
         // Пример:
         double xi = 11;
         double result = gaussInterpolationSecondFormula(x, y, xi);
