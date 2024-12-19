@@ -1,60 +1,28 @@
-import java.util.Arrays;
+import java.util.function.Function;
+
 public class Main {
-    public static void main(String[] args) {
-        double[] x = {10, 15, 20, 25, 30};
-//        double[] y = {3, 7, 11, 17, 18};
-        double[] y = {};
+    // Узлы и веса для метода Гаусса-Эрмита при n = 3
+    static final double[] NODES = {-1.22474, 0.0, 1.22474};
+    static final double[] WEIGHTS = {0.29541, 1.18164, 0.29541};
 
-        if (y.length == 0) {
-            y = computeFunctionValues(x);
-        }
-        System.out.println("x: " + Arrays.toString(x));
-        System.out.println("y: " + Arrays.toString(y));
-       
-        // Пример:
-        double xi = 11;
-        double result = gaussInterpolationSecondFormula(x, y, xi);
-        System.out.printf("Значение интерполяции в x = %.2f : result = %.4f%n", xi, result);
-    }
-    private static double[] computeFunctionValues(double[] x) {
-        double[] y = new double[x.length];
-        for (int i = 0; i < x.length; i++) {
-            y[i] = Math.pow(x[i], 3);
-        }
-        return y;
-    }
-
-    private static double gaussInterpolationSecondFormula(double[] x, double[] y, double xi) {
-        int n = x.length;
-        double[][] diffTable = new double[n][n];
-
-        for (int i = 0; i < n; i++) {
-            diffTable[i][0] = y[i];
-        }
-        // Заполняем таблицу конечных разностей
-        for (int j = 1; j < n; j++) {
-            for (int i = 0; i < n - j; i++) {
-                diffTable[i][j] = diffTable[i + 1][j - 1] - diffTable[i][j - 1];
-            }
-    }
-        System.out.println("Таблица конечных разностей:");
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print(diffTable[i][j] + "  \t");
-            }
-            System.out.println();
-        }
-
-        double h = x[1] - x[0];
-        double q = (xi - x[n - 1]) / h; 
-        double result = y[n - 1]; 
-        double term = 1;
-
-    // Вычисляем интерполяционную сумму
-        for (int i = 1; i < n; i++) {
-            term *= (q + (i - 1)) / i; 
-            result += term * diffTable[n - i - 1][i]; 
+    public static double gaussHermite(Function<Double, Double> f) {
+        double result = 0.0;
+        for (int i = 0; i < NODES.length; i++) {
+            result += WEIGHTS[i] * f.apply(NODES[i]);
         }
         return result;
+    }
+
+    public static void main(String[] args) {
+        //f(x) = (x + 1)^4
+        Function<Double, Double> f1 = x -> Math.pow(x + 1, 4);
+        // f(x) = x^2 * cos(2x)
+        Function<Double, Double> f2 = x -> Math.pow(x, 2) * Math.cos(2 * x);
+
+        double result1 = gaussHermite(f1);
+        double result2 = gaussHermite(f2);
+
+        System.out.printf("Результат для f(x) = (x + 1)^4: %.5f \n", result1);
+        System.out.printf("Результат для f(x) = x^2 * cos(2x): %.5f \n", result2);
     }
 }

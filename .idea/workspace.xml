@@ -37,7 +37,7 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/SPARKLHD/NM.git",
-    "accountId": "87a3a2c4-b5db-4223-901f-305769cadaad"
+    "accountId": "1db6c763-88e6-465b-8dac-a120d2c69c72"
   }
 }]]></component>
   <component name="ProjectColorInfo">{
@@ -53,11 +53,27 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "gauss",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "gauss-quadrature",
     "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "C:/Users/HP/IdeaProjects/interpolate/src/Main.java"
+    "onboarding.tips.debug.path": "C:/Users/HP/IdeaProjects/interpolate/src/Main.java",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="interpolate" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
