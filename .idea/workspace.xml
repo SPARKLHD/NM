@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b781f2de-1e4f-4c22-bb28-9fc9927dbe9a" name="Changes" comment="123">
+    <list default="true" id="b781f2de-1e4f-4c22-bb28-9fc9927dbe9a" name="Changes" comment="gauss-guadrature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -22,7 +22,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="derivative" />
+        <entry key="$PROJECT_DIR$" value="gauss-quadrature" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,12 +34,12 @@
     &quot;assignee&quot;: &quot;SPARKLHD&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/SPARKLHD/NM.git",
-    "accountId": "1db6c763-88e6-465b-8dac-a120d2c69c72"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SPARKLHD/NM.git&quot;,
+    &quot;accountId&quot;: &quot;1db6c763-88e6-465b-8dac-a120d2c69c72&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -54,7 +54,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "gauss-quadrature",
+    "git-widget-placeholder": "chordMethod",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "C:/Users/HP/IdeaProjects/interpolate/src/Main.java",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -70,6 +70,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -131,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732569369390</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="gauss-guadrature">
+      <option name="closed" value="true" />
+      <created>1734618424457</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1734618424457</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,6 +158,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="derivative" />
     <MESSAGE value="123" />
-    <option name="LAST_COMMIT_MESSAGE" value="123" />
+    <MESSAGE value="gauss-guadrature" />
+    <option name="LAST_COMMIT_MESSAGE" value="gauss-guadrature" />
   </component>
 </project>

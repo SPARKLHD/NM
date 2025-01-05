@@ -1,28 +1,32 @@
-import java.util.function.Function;
-
 public class Main {
-    // Узлы и веса для метода Гаусса-Эрмита при n = 3
-    static final double[] NODES = {-1.22474, 0.0, 1.22474};
-    static final double[] WEIGHTS = {0.29541, 1.18164, 0.29541};
-
-    public static double gaussHermite(Function<Double, Double> f) {
-        double result = 0.0;
-        for (int i = 0; i < NODES.length; i++) {
-            result += WEIGHTS[i] * f.apply(NODES[i]);
+    public static double f(double x) {
+        return 2 * x * x - 1 / (1 + x) - 16;
+    }
+    // Метод хорд
+    public static double findRoot(double a, double b, double epsilon) {
+        double c;
+        int iteration = 0;
+        System.out.printf("%-10s%-15s%-15s%-15s%-15s%n", "Итерация", "a", "b", "c", "f(c)");
+        while (Math.abs(b - a) > epsilon) {
+            iteration++;
+            c = a - f(a) * (b - a) / (f(b) - f(a));
+            System.out.printf("%-10d%-15f%-15f%-15f%-15f%n", iteration, a, b, c, f(c));
+            if (f(c) == 0) { // Если найден точный корень
+                return c;
+            } else if (f(a) * f(c) < 0) { // Корень находится в левом подотрезке
+                b = c;
+            } else { // Корень находится в правом подотрезке
+                a = c;
+            }
         }
-        return result;
+        return (a + b) / 2; // Возвращаем среднюю точку интервала
     }
 
     public static void main(String[] args) {
-        //f(x) = (x + 1)^4
-        Function<Double, Double> f1 = x -> Math.pow(x + 1, 4);
-        // f(x) = x^2 * cos(2x)
-        Function<Double, Double> f2 = x -> Math.pow(x, 2) * Math.cos(2 * x);
-
-        double result1 = gaussHermite(f1);
-        double result2 = gaussHermite(f2);
-
-        System.out.printf("Результат для f(x) = (x + 1)^4: %.5f \n", result1);
-        System.out.printf("Результат для f(x) = x^2 * cos(2x): %.5f \n", result2);
+        double a = 2;
+        double b = 4;
+        double epsilon = 0.001;
+        double root = findRoot(a, b, epsilon);
+        System.out.printf("Найденный корень: %.6f%n", root);
     }
 }
