@@ -7,8 +7,8 @@ public class Main {
         };
         double[] f = {-19.9, 16, -2};
 
-        // Переменная для хранения количества перестановок строк
-        int swapCount = 0;
+        // Используем массив из одного элемента
+        int[] swapCount = {0};
 
         double[] solution = solveGaussian(A, f, swapCount);
 
@@ -17,15 +17,15 @@ public class Main {
             System.out.printf("x%d = %.5f%n", i + 1, solution[i]);
         }
 
-        // Вычисление определителя
-        double determinant = calculateDeterminant(A, swapCount);
+        // Определитель теперь использует swapCount[0]
+        double determinant = calculateDeterminant(A, swapCount[0]);
         System.out.printf("Определитель матрицы: %.5f%n", determinant);
 
-        System.out.println("Матрица A после преобразований:");
-        printMatrix(A);
+        //System.out.println("Матрица A после преобразований:");
+        //printMatrix(A);
     }
 
-    public static double[] solveGaussian(double[][] A, double[] f, int swapCount) {
+    public static double[] solveGaussian(double[][] A, double[] f, int[] swapCount) {
         int n = A.length;
 
         // Прямой ход
@@ -49,7 +49,7 @@ public class Main {
                 f[maxRow] = t;
 
                 // Увеличиваем количество перестановок
-                swapCount++;
+                swapCount[0]++; // Изменяем элемент массива
             }
 
             // Приведение к треугольному виду
@@ -74,6 +74,7 @@ public class Main {
         return x;
     }
 
+    // calculateDeterminant теперь принимает int, а не int[]
     public static double calculateDeterminant(double[][] A, int swapCount) {
         int n = A.length;
         double determinant = 1.0;
